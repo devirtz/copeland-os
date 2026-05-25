@@ -53,14 +53,16 @@ Two custom Windows ISOs are included:
 
 All internet traffic from the Windows guest is forced through an isolated network VM - similar to how **Qubes OS** and **Tails** handle networking. This means even if the Windows VM is fully compromised through a zero-day exploit (such as a V8 engine vulnerability in the browser), the attacker cannot discover your real IP address or physical location.
 
+CopelandOS itself ships with a **patched Firefox** similiar to Camoufox, browser hardened against fingerprinting. Standard browser fingerprinting scripts such as CreepJS and FingerprintJS are defeated by patching Firefox internals - spoofing canvas, WebGL, font, and audio context fingerprints at the browser level.
+
 ## Goals
 
-- **Undetected VM** - hardened against hypervisor fingerprinting, timing attacks, and other VM-detection methods
-- **Privacy-first** - all design and architectural decisions prioritize user privacy and anonymity
-- **Network isolation** - traffic routed through an isolated gateway VM; a compromised guest cannot leak your real location
-- **Reverse engineering toolkit** - preinstalled tools for binary analysis, debugging, unpacking, and reversing
-- **Tiling window manager** - efficient keyboard-driven multitasking
-- **Minimal trusted compute base** - as few components as possible run with elevated privileges
+- Undetected VM
+- Privacy-first
+- Network isolation
+- Reverse engineering toolkit
+- Tiling window manager
+- Custom browser (anti-fingerprinting)
 
 ## Building
 
