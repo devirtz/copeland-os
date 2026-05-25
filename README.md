@@ -42,7 +42,7 @@ Inspired by Apple's unreleased **Copland OS** and the anime *Serial Experiments 
 
 ## How It Works
 
-CopelandOS is a Linux-based host OS with a devirtualized kernel and a tiling window manager. Its job is to boot and manage an isolated Windows environment.
+CopelandOS is a Linux-based host OS with its own kernel and a tiling window manager. Its job is to boot and manage an isolated Windows environment.
 
 On startup, the system automatically launches **QEMU** and boots a **hardened Windows guest VM**. This Windows VM is configured to be undetectable as a virtual machine - it passes through hardware identifiers, avoids QEMU/KVM fingerprints, and neutralizes timing-based VM detection. This prevents malware, DRM, and anti-analysis software from realizing they are running inside a VM.
 
