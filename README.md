@@ -45,7 +45,7 @@ Inspired by Apple's unreleased **Copland OS** and the anime *Serial Experiments 
 ```mermaid
 graph TD
     subgraph CopelandOS["CopelandOS (Linux Host)"]
-        KERNEL[Devirtualized Kernel]
+        KERNEL[Custom Linux Kernel]
         TWM[Tiling Window Manager]
         FIREFOX[Patched Firefox]
     end
