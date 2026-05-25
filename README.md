@@ -42,11 +42,11 @@ Inspired by Apple's unreleased **Copland OS** and the anime *Serial Experiments 
 
 ## How It Works
 
-CopelandOS is a Linux-based host OS that runs inside an undetected virtual machine, hardened against common VM-detection techniques. It uses a devirtualized kernel to reduce the hypervisor footprint and avoid triggering anti-VM checks used by malware and DRM.
+CopelandOS is a Linux-based host OS with a devirtualized kernel and a tiling window manager. Its job is to boot and manage an isolated Windows environment.
 
-The system uses a tiling window manager for a keyboard-driven workflow.
+On startup, the system automatically launches **QEMU** and boots a **hardened Windows guest VM**. This Windows VM is configured to be undetectable as a virtual machine - it passes through hardware identifiers, avoids QEMU/KVM fingerprints, and neutralizes timing-based VM detection. This prevents malware, DRM, and anti-analysis software from realizing they are running inside a VM.
 
-On boot, CopelandOS automatically starts **QEMU** and launches a Windows guest VM. Two custom Windows ISOs are included:
+Two custom Windows ISOs are included:
 
 - **Windows 10** - preloaded with a curated reverse engineering toolkit from the [52pojie.cn](https://www.52pojie.cn) community
 - **Windows 11** - same toolkit, on the newer kernel
